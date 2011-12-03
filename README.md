@@ -1,1 +1,1 @@
-Stuff for my [website](vedri.ca).
+Stuff for my [website](http://vedri.ca).
