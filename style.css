@@ -1,0 +1,39 @@
+body {
+  font-family:Helvetica;
+  font-size:13.5px;
+  background-color:ffffff;
+  background-image:url(sretnici.jpg);
+  background-repeat:no-repeat;
+  background-position:bottom left;
+  background-attachment:fixed;
+  margin-left: 300px;
+  margin-right: 100px;
+}
+
+h1 {
+  text-align:left;
+  font-family:Helvetica;
+  color:000000;
+}
+
+h2 {
+  font-family:Helvetica;
+  color:000000;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  text-align:left;
+  font-family:Helvetica;
+  font-style:normal;
+  font-weight:normal;
+  color:000000;
+}
+
+
+.inline {
+  margin-left: 25px;
+}
