@@ -1,13 +1,13 @@
 body {
   font-family:Helvetica;
-  font-size:14px;
+  font-size:18px;
   background-color:ffffff;
   background-image:url(sretnici.jpg);
   background-repeat:no-repeat;
   background-position:bottom left;
   background-attachment:fixed;
   margin-left: 300px;
-  margin-right: 100px;
+  margin-right: 500px;
 }
 
 h1 {
@@ -33,6 +33,9 @@ p {
   color:000000;
 }
 
+a {
+  target-position: behind;
+}
 
 .inline {
   margin-left: 25px;
