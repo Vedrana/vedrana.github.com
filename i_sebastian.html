@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
   <meta charset="UTF-8">
   <title>Tim vanilija - upiši se i ti!</title>
@@ -7,14 +7,10 @@
 <body>
 
 <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCEkaIGfdlLBMdCg1_vt-9Xy0KS32ODFoI",
     authDomain: "tim-vanilija.firebaseapp.com",
@@ -28,35 +24,42 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-  
-Hey! </br>
-Ja sam Sebastian! </br>
-Drago mi je upoznat' te! Ja sam šef u klubu Tim vanilija. Želiš li se i ti upisat'? </br>
-  
-  <h2>Dodaj svoje ime</h2>
-  <input type="text" id="textInput" placeholder="Tvoje ime ovdje...">
-  <button onclick="addToList()">Upiši se</button>
+  const db = getDatabase(app);
+  const listRef = ref(db, 'tim-vanilija/names');
 
-  <ul id="listContainer">
-    <!-- New items will appear here -->
-  </ul>
+  // Add name to Firebase
+  window.addToList = function () {
+    const input = document.getElementById('textInput');
+    const text = input.value.trim();
 
-  <script>
-    function addToList() {
-      const input = document.getElementById('textInput');
-      const text = input.value.trim();
-
-      if (text !== '') {
-        const list = document.getElementById('listContainer');
-        const newItem = document.createElement('li');
-        newItem.textContent = text;
-        list.appendChild(newItem);
-        input.value = ''; // Clear input after adding
-      }
+    if (text !== '') {
+      push(listRef, text); // Save to Firebase
+      input.value = ''; // Clear input
     }
-  </script>
+  }
+
+  // Realtime listener to add new names to the list
+  const listContainer = document.getElementById('listContainer');
+
+  onChildAdded(listRef, (data) => {
+    const newItem = document.createElement('li');
+    newItem.textContent = data.val();
+    listContainer.appendChild(newItem);
+  });
+</script>
+
+<!-- UI -->
+<p>Hey!<br>
+Ja sam Sebastian!<br>
+Drago mi je upoznat' te! Ja sam šef u klubu Tim vanilija. Želiš li se i ti upisat'?<br></p>
+
+<h2>Dodaj svoje ime</h2>
+<input type="text" id="textInput" placeholder="Tvoje ime ovdje...">
+<button onclick="addToList()">Upiši se</button>
+
+<ul id="listContainer">
+  <!-- Names will appear here -->
+</ul>
+
 </body>
 </html>
-
