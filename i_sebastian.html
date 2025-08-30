@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tim vanilija - upiši se i ti!</title>
+</head>
+<body>
+
 Hey! </br>
 Ja sam Sebastian! </br>
 Drago mi je upoznat' te! Ja sam šef u klubu Tim vanilija. Želiš li se i ti upisat'? </br>
+  
+  <h2>Dodaj svoje ime</h2>
+  <input type="text" id="textInput" placeholder="Tvoje ime ovdje...">
+  <button onclick="addToList()">Upiši se</button>
+
+  <ul id="listContainer">
+    <!-- New items will appear here -->
+  </ul>
+
+  <script>
+    function addToList() {
+      const input = document.getElementById('textInput');
+      const text = input.value.trim();
+
+      if (text !== '') {
+        const list = document.getElementById('listContainer');
+        const newItem = document.createElement('li');
+        newItem.textContent = text;
+        list.appendChild(newItem);
+        input.value = ''; // Clear input after adding
+      }
+    }
+  </script>
+</body>
+</html>
+
