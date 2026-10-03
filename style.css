@@ -159,19 +159,20 @@ h1 {
 
 .page-header {
   padding-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .portfolio-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 20px;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -179,21 +180,19 @@ h1 {
 
 .portfolio-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: contain;
-  object-position: center;
+  height: auto;
   display: block;
-  background: var(--bg);
-  padding: 1rem;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .portfolio-card figcaption {
-  padding: 1rem;
-  text-align: center;
-  margin-top: auto;
+  display: none;
 }
 
-.portfolio-card strong {
-  display: block;
-  font-size: 0.95rem;
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
