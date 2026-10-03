@@ -125,11 +125,14 @@ h1 {
   color: var(--ink);
 }
 
-.hero-art img {
+.hero-art img,
+.hero-art video {
   width: min(100%, 440px);
   border-radius: 24px;
   display: block;
   box-shadow: 0 22px 40px rgba(0,0,0,0.08);
+  background: #000;
+  object-fit: cover;
 }
 
 .meta {
