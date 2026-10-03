@@ -165,14 +165,14 @@ h1 {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  row-gap: 1.5rem;
 }
 
 .portfolio-card {
   background: transparent;
   border: none;
-  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -182,7 +182,7 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
+  border-radius: 12px;
   object-fit: cover;
 }
 
@@ -193,6 +193,7 @@ h1 {
 @media (max-width: 768px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+    row-gap: 1.2rem;
   }
 }
