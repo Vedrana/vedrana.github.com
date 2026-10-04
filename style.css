@@ -165,28 +165,20 @@ h1 {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-auto-rows: 240px;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin-top: 2.5rem;
-  row-gap: 1.5rem;
 }
 
 .portfolio-card {
   background: transparent;
   border: none;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio-card:nth-child(2),
-.portfolio-card:nth-child(4) {
-  grid-row: span 2;
+  border-radius: 12px;
 }
 
 .portfolio-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   border-radius: 12px;
   object-fit: cover;
@@ -199,13 +191,13 @@ h1 {
 @media (max-width: 768px) {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
     gap: 1rem;
-    row-gap: 1.2rem;
   }
+}
 
-  .portfolio-card:nth-child(2),
-  .portfolio-card:nth-child(4) {
-    grid-row: span 1;
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
