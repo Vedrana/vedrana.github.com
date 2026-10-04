@@ -163,23 +163,24 @@ h1 {
 }
 
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  column-count: 3;
+  column-gap: 1.25rem;
   margin-top: 2.5rem;
 }
 
 .portfolio-card {
-  background: transparent;
-  border: none;
-  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1.25rem;
+  break-inside: avoid;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .portfolio-card img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -188,16 +189,14 @@ h1 {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    column-count: 2;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    column-count: 1;
   }
 }
