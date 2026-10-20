@@ -44,5 +44,14 @@
       </p>
     </section>
   </main>
+<script>
+  (function () {
+    var video = document.querySelector(".hero-art video");
+    if (!video) return;
+    var show = function () { video.classList.add("is-loaded"); };
+    if (video.readyState >= 2) show();
+    else video.addEventListener("loadeddata", show, { once: true });
+  })();
+</script>
 </body>
 </html>
