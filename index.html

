@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vedrana</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper nav">
+      <a class="brand" href="index.html">Vedrana</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Illustrations</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Hello</p>
+        <h1>I'm Vedrana.</h1>
+        <p>I'm an illustrator and a software engineer. I love music, books, coffee, drawing and learning new things.</p>
+        <div class="cta-row">
+          <a class="button primary" href="portfolio.html">See my illustrations</a>
+          <a class="button secondary" href="about.html">More about me</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <video autoplay muted loop playsinline aria-label="Portrait video">
+          <source src="portrait.mp4" type="video/mp4" />
+          Your browser doesn't support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <section class="meta">
+      <p>Email me at <a href="mailto:vedrana.jankovic@gmail.com">vedrana.jankovic@gmail.com</a>.</p>
+      <p>
+        <a href="https://github.com/Vedrana">GitHub</a> •
+        <a href="https://www.linkedin.com/in/vedranajankovic">LinkedIn</a> •
+        <a href="https://www.last.fm/user/oblachica">Last.fm</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
